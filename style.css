@@ -1,50 +1,48 @@
-/* Reset default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  box-sizing: border-box;
-}
-
-/* Add your own styles here */
-
 body {
-  font-family: Arial, sans-serif;
+  background-image: url('img/bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* ------------- intro ------------- */
+
+/* ------------- project container ------------- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 57vh;
+  margin-left: 60px;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
+.project-container {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 310px;
+  background-color: #222145;
+  color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-container:last-child {
+  margin-right: 0; 
+}
+
+.project-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-container p {
+  margin-top: 10px;
+  font-weight: bold;
   padding: 10px;
+  background-color: transparent;
+  border-radius: 0 0 8px 8px;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 18px;
 }
-
-nav ul {
-  list-style: none;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-
-
-
-/* ----------------projects---------------- */
-#projects{
-  padding: 30px 0;
-}
-.project-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 40px;
-  margin-top: 50px;
-}
-
-
-
