@@ -1,16 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const nameElement = document.querySelector(".name");
-    const nameText = "Lea Rostoker";
-    let index = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const nameElement = document.getElementById("name");
+    const nameText = "Léa Rostoker";
   
-    function typeWriter() {
-      if (index < nameText.length) {
-        nameElement.textContent += nameText.charAt(index);
-        index++;
-        setTimeout(typeWriter, 100);
-      }
+    let charIndex = 0;
+    let timer;
+  
+    function type() {
+      const text = nameText.slice(0, charIndex);
+      nameElement.textContent = text;
+      charIndex++;
+  
+      if (charIndex <= nameText.length) {
+        timer = setTimeout(type, 100);
+      } else {
+        setTimeout(function() {
+            profileImage.style.display = "block";
+          }, 20);
+        }
     }
   
-    typeWriter();
+    type();
   });
+
+
   
