@@ -22,5 +22,19 @@ window.addEventListener("DOMContentLoaded", () => {
     type();
   });
 
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetElement = document.querySelector(this.getAttribute('href'));
+      const offset = -100; 
+      
+      window.scrollTo({
+        top: targetElement.offsetTop + offset,
+        behavior: 'smooth'
+      });
+    });
+  });
+  
 
   
