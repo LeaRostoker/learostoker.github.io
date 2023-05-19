@@ -5,6 +5,78 @@ body {
   background-size: cover;
 }
 /* ------------- intro ------------- */
+.intro-section {
+  background-color: #222145;
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-container {
+  width: 50%;
+  text-align: right;
+  opacity: 0;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ffffff;
+  animation: typing 4s steps(20) 1s forwards, slide-left 2s 5s forwards;
+}
+
+.image-container {
+  width: 50%;
+  text-align: left;
+  opacity: 0;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: slide-right 2s 5s forwards;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 /* ------------- project container ------------- */
 .row {
