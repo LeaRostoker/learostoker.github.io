@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
     const nameElement = document.getElementById("name");
-    const nameText = "Léa Rostoker";
+    const nameText = "Léa Rostoker.";
   
     let charIndex = 0;
     let timer;
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       
       const targetElement = document.querySelector(this.getAttribute('href'));
-      const offset = -100; 
+      const offset = -70; 
       
       window.scrollTo({
         top: targetElement.offsetTop + offset,

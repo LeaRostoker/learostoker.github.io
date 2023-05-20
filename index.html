@@ -25,7 +25,7 @@
               <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">Contact Me</a>
             </li>
           </ul>
         </div>
@@ -41,12 +41,39 @@
             <h1 id="name"></h1>
           </div>
           <div id="image-container">
-            <img src="img/profile-picture.JPG" alt="Profile Picture">
+            <img src="img/profile-picture.jpeg" alt="Profile Picture">
           </div>
         </div>
       </div>
     </section>
-    
+
+    <section id="about">
+      <div class="container">
+        <div class="about-row">
+          <div id="about-image">
+            <img src="img/about-picture.JPG" alt="Profile Picture">
+          </div>
+          <div id="about-container">
+            <h2 class="about-title">About Me</h2>
+            <p class="about-text">Welcome to my website! I'm Léa, a soon-to-be IT and multimedia engineer graduating in September for <a class="text" href="https://www.ingenieur-imac.fr/" target="_blank">IMAC</a> engineering school.
+               As a skilled programmer and web developer, I'm actively seeking opportunities to start my carreer in this field.
+
+              <br>I have a passion for exploring the world. 
+              Prior to my final year of engineering school, I experienced life in Japan, doing research on Deep Learning at Kyushu National University. 
+              During this time, I also worked as a freelance web developer. 
+              Then, I pursued a computer science major as an exchange student at South Korea's Jeonju National University, where I achieved a 4.0 GPA.
+              <br>I am also a very creative person. I love to experience different medium such as ink drawing, painting, tattooing. I love to record vieo, which i edit and post on <a class="text" href="https://www.youtube.com/@lelelovesbroli" target="_blank">Youtube</a>.
+            </p>
+            <div class="about-button-row">
+              <a href="pdf/CVLeaRostoker.pdf" class="about-button" style="background-color: #c9bdea;">Download CV</a> 
+              <a href="https://www.linkedin.com/your-profile" class="about-button" style="background-color: #c6cfef;">LinkedIn</a>
+              <a href="https://www.instagram.com/your-profile" class="about-button" style="background-color: #e1d0d8;">Instagram</a>
+              <a href="https://www.youtube.com/your-channel" class="about-button" style="background-color: #ced7ef;">YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <section id="projects">
       <div class="container">
@@ -80,7 +107,48 @@
           </div>
         </div>
       </div>
-    </section>   
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-row">
+          <div class="col-md-6">
+            <div class="contact-info">
+              <h2 class="contact-title">Contact Me</h2>
+              <div class="contact-buttons-col">
+                <a href="pdf/CVLeaRostoker.pdf" class="contact-button" style="background-color: #c9bdea;">Download CV</a> 
+                <a href="https://www.linkedin.com/your-profile" class="contact-button" style="background-color: #c6cfef;">LinkedIn</a>
+                <a href="https://www.instagram.com/your-profile" class="contact-button" style="background-color: #e1d0d8;">Instagram</a>
+                <a href="https://www.youtube.com/your-channel" class="contact-button" style="background-color: #ced7ef;">YouTube</a>
+              </div>
+              <p> <b>Email: </b>lea.rostoker.12@gmail.com</p>
+              <p> <b>Phone: </b> +33 6 28 58 83 86</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-form">
+              <h2>Get in Touch</h2>
+              <form action="#" method="POST">
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="button">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     
   </main>
 
