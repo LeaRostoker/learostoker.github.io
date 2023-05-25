@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bubble Game</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
+  <title>Bouncing Bubble</title>
+  <style>
+    #bubble {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
 </head>
 <body>
+  <div id="bubble"></div>
+  <div id="bubble"></div>
 
-	<div class="container-fluid">
-		<div id="bubble-container"></div>
-	</div>
+  <script>
+    // Get the bubble element
+    var bubble = document.getElementById('bubble');
 
-	<script src="script.js"></script>
+    // Set initial position and velocity
+    var x = 0; // initial x position
+    var y = 0; // initial y position
+    var vx = 2; // velocity along x-axis
+    var vy = 2; // velocity along y-axis
+
+    // Update the position of the bubble
+    function updateBubblePosition() {
+      // Update the position
+      x += vx;
+      y += vy;
+
+      // Check if the bubble hit the edges
+      if (x + bubble.offsetWidth >= window.innerWidth || x <= 0) {
+        vx *= -1; // reverse velocity along x-axis
+      }
+
+      if (y + bubble.offsetHeight >= window.innerHeight || y <= 0) {
+        vy *= -1; // reverse velocity along y-axis
+      }
+
+      // Set the new position
+      bubble.style.left = x + 'px';
+      bubble.style.top = y + 'px';
+
+      // Call the updateBubblePosition function again
+      requestAnimationFrame(updateBubblePosition);
+    }
+
+    // Start the animation
+    updateBubblePosition();
+  </script>
 </body>
 </html>

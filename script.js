@@ -36,58 +36,91 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //CONTACT FORM
+
+  function sendEmail(){
+    var params = {
+      reply_email: getElementById("email").value,
+      message: getElementById("message").value
+    };
+    
+    const serviceID = "service_qq2k9tr";
+    const templateID = "template_h1kxlya";
+    
+    emailjs
+      .send( serviceID, templateID, params )
+      .then((res) => {
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          console.log(res);
+          alert("your message was sent successfully!");
+      })
+      .catch(err=>console.log(err));
+  }
+
+
+  // GAME
+
   document.addEventListener("DOMContentLoaded", function() {
     // Define the number of bubbles to create
     const NUM_BUBBLES = 10;
   
+    // Create an array to hold the bubbles
     let bubbles = [];
+  
+    // Get the dimensions of the screen
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
   
     // Create the bubbles
     for (let i = 0; i < NUM_BUBBLES; i++) {
       let bubble = document.createElement("div");
       bubble.classList.add("bubble");
-      bubble.style.top = Math.floor(Math.random() * 80) + "%";
-      bubble.style.left = Math.floor(Math.random() * 80) + "%";
+  
+      // Set random position within the screen space
+      const bubbleSize = 50; // Assuming the bubble size is 50x50 pixels
+      const randomX = Math.floor(Math.random() * (screenWidth - bubbleSize));
+      const randomY = Math.floor(Math.random() * (screenHeight - bubbleSize));
+      bubble.style.top = randomY + "px";
+      bubble.style.left = randomX + "px";
+  
       document.getElementById("bubble-container").appendChild(bubble);
       bubbles.push(bubble);
     }
   
-    // Add a click event listener to each bubble
-    for (let i = 0; i < bubbles.length; i++) {
-      bubbles[i].addEventListener("click", function() {
-        this.style.animation = "none";
-        this.style.backgroundColor = "red";
-        this.classList.remove("moving");
-      });
-    }
-  
-    // Move the bubbles around the screen
-    setInterval(function() {
-      for (let i = 0; i < bubbles.length; i++) {
-        let top = parseInt(bubbles[i].style.top);
-        let left = parseInt(bubbles[i].style.left);
-        let newTop = top + Math.floor(Math.random() * 10) - 5;
-        let newLeft = left + Math.floor(Math.random() * 10) - 5;
-  
-        if (newTop < 0 || newTop > 80) {
-          newTop = top - Math.floor(Math.random() * 10);
-        }
-        if (newLeft < 0 || newLeft > 80) {
-          newLeft = left - Math.floor(Math.random() * 10);
-        }
-  
-        bubbles[i].style.top = newTop + "%";
-        bubbles[i].style.left = newLeft + "%";
-  
-        if (bubbles[i].classList.contains("moving")) {
-          bubbles[i].classList.remove("moving");
-        } else {
-          bubbles[i].classList.add("moving");
-        }
+    // Set initial position and velocity
+    var x = 0; // initial x position
+    var y = 0; // initial y position
+    var vx = 2; // velocity along x-axis
+    var vy = 2; // velocity along y-axis
+
+    // Update the position of the bubble
+    function updateBubblePosition() {
+      // Update the position
+      x += vx;
+      y += vy;
+
+      // Check if the bubble hit the edges
+      if (x + bubble.offsetWidth >= window.innerWidth || x <= 0) {
+        vx *= -1; // reverse velocity along x-axis
       }
-    }, 1000);
+
+      if (y + bubble.offsetHeight >= window.innerHeight || y <= 0) {
+        vy *= -1; // reverse velocity along y-axis
+      }
+
+      // Set the new position
+      bubble.style.left = x + 'px';
+      bubble.style.top = y + 'px';
+
+      // Call the updateBubblePosition function again
+      requestAnimationFrame(updateBubblePosition);
+    }
+
+    // Start the animation
+    updateBubblePosition();
+
   });
-  
-  
+
 
   
