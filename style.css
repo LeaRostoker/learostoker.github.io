@@ -12,8 +12,8 @@ body {
 
 a {
   color: #54506f;
-  font-family: superclarendon, serif;
-  font-weight: bold;
+  font-family: cooper-black-std,serif;
+  font-weight:400;
   font-style: italic;
 }
 
@@ -245,7 +245,8 @@ label {
   padding: 10px 20px;
   background: #54506f;
   color: #54506f;
-  font-weight: 200;
+  font-weight: 100;
+  font-size: 20px;
   text-decoration: none;
   border: none;
   border-radius: 20px;
